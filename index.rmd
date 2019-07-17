@@ -1,8 +1,31 @@
 ---
-title: "Welcome to Woo"
-output: html_document
+title: "Dygraphs"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#install.packages("flexdashboard")
+
+library(dygraphs)
+library(flexdashboard)
+```
+
+### Lung Deaths (All)
+
+```{r}
+dygraph(ldeaths)
+```
+
+### Lung Deaths (Male)
+
+```{r}
+dygraph(mdeaths)
+```
+
+### Lung Deaths (Female)
+
+```{r}
+dygraph(fdeaths)
 ```
